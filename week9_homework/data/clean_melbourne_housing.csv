@@ -1,4 +1,4 @@
-Suburb,Address,Rooms,Type,Price,Method,SellerG,Date,Distance,Postcode,Bedroom2,Bathroom,Car,Landsize,BuildingArea,YearBuilt,CouncilArea,Lattitude,Longtitude,Regionname,Propertycount
+Suburb,Address,Rooms,Type,Price,Method,Seller,Date,Distance,Postcode,Bedroom2,Bathroom,Car,Landsize,BuildingArea,YearBuilt,CouncilArea,Latitude,Longitude,Regionname,Propertycount
 Abbotsford,25 Bloomburg St,2,h,1035000,S,Biggin,4/2/16,2.5,3067,2,1,0,156,79,1900,Yarra City Council,-37.8079,144.9934,Northern Metropolitan,4019
 Abbotsford,5 Charles St,3,h,1465000,SP,Biggin,4/3/17,2.5,3067,3,2,0,134,150,1900,Yarra City Council,-37.8093,144.9944,Northern Metropolitan,4019
 Abbotsford,55a Park St,4,h,1600000,VB,Nelson,4/6/16,2.5,3067,3,1,2,120,142,2014,Yarra City Council,-37.8072,144.9941,Northern Metropolitan,4019
