@@ -3,7 +3,10 @@
   "width": 800,
   "height": 500,
   "title": "Melbourne Housing Tings",
-  "projection": {"type": "equirectangular"},
+  "projection": {
+    "parallels": [-34.5, -38],
+    "rotate": [-145, 0, 0],
+    "type": "equirectangular"},
   "layer": [
     {
       "data": {
