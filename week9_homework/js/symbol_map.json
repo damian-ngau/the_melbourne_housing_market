@@ -4,7 +4,6 @@
   "height": 500,
   "title": "Melbourne Housing Tings",
   "projection": {
-    "scale": 100,
     "type": "mercator"},
   "layer": [
     {
