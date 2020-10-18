@@ -5,7 +5,7 @@
   "title": "Melbourne Housing Tings",
   "projection": {
     "center": [-37.8136, 144.9631],
-    "scale": 900,
+    "scale": 10,
     "type": "mercator"},
   "layer": [
     {
