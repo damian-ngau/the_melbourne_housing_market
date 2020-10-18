@@ -3,8 +3,7 @@
   "width": 800,
   "height": 500,
   "title": "Melbourne Housing Tings",
-  "projection": {
-    "type": "mercator"},
+  "projection": {"type": "mercator"},
   "layer": [
     {
       "data": {
@@ -23,21 +22,17 @@
       },
       "layer": [
         {
-          "mark": {
-            "type": "circle",
-            "tooltip": {"content": "data"}
-          },
+          "mark": {"type": "circle", "tooltip": {"content": "data"}},
           "encoding": {
-            "size": {"field": "Rooms", 
-                     "type": "quantitative",
-                     "scale": {
-                          "domain": [1, 12]
-                        }},
-            "color": {"field": "Price", 
-                      "type": "quantitative",
-                      "scale":{
-                          "scheme":"reds"
-                      }          
+            "size": {
+              "field": "Rooms",
+              "type": "quantitative",
+              "scale": {"domain": [1, 12]}
+            },
+            "color": {
+              "field": "Price",
+              "type": "quantitative",
+              "scale": {"scheme": "reds"}
             }
           }
         }
