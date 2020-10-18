@@ -3,7 +3,10 @@
   "width": 800,
   "height": 500,
   "title": "Melbourne Housing Tings",
-  "projection": {"type": "mercator"},
+  "projection": {
+    "center": [-37.8136, 144.9631],
+    "scale": 10,
+    "type": "mercator"},
   "layer": [
     {
       "data": {
