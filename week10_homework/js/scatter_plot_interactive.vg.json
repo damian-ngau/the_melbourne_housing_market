@@ -59,15 +59,13 @@
       "field": "LandSize",
       "type": "quantitative",
       "title": "Land Area",
-      "axis": {"tickCount": 9},
-      "scale": {"type": "log", "domain": [1, 45000]}
+      "axis": {"tickCount": 9}
     },
     "y": {
       "field": "BuildingArea",
       "type": "quantitative",
       "title": "Building Area",
-      "axis": {"tickCount": 7},
-      "scale": {"type": "log", "domain": [1, 3500]}
+      "axis": {"tickCount": 7}
     }
   },
   "layer": [
