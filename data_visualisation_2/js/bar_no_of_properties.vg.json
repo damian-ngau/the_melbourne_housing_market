@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "No. of Properties Sold by Region",
   "data": {"url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/data_visualisation_2/data/clean_melbourne_housing.csv"},
-  "mark": {"type": "bar", "tooltip": {"content": "data"}},
+  "mark": "bar",
   "encoding": {
     "y": {
       "field": "RegionName",
@@ -13,5 +13,8 @@
       "aggregate": "count",
       "type": "quantitative"
     },
+    "tooltip": [
+      {"field": "RegionName", "type": "nominal"},
+      {"field": "x", "type": "quantitative"}
   }
 }
