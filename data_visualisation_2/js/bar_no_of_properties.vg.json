@@ -6,7 +6,7 @@
   "encoding": {
     "y": {
       "field": "RegionName",
-      "type": "ordinal",
+      "type": "nominal",
       "sort": "-x"
     },
     "x": {
