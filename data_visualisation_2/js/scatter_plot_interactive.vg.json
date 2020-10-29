@@ -59,7 +59,7 @@
       "field": "LandSize",
       "type": "quantitative",
       "title": "Land Area",
-      "scale": {"type": "log", "domain": [1, 45000]}
+      "scale": {"type": "log", "domain": [1, 45000]},
       "axis": {"tickCount": 9}
     },
     "y": {
