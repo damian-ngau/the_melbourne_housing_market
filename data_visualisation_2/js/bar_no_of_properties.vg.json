@@ -16,5 +16,6 @@
     "tooltip": [
       {"field": "RegionName", "type": "nominal"},
       {"field": "x", "type": "quantitative"}
+      ]
   }
 }
