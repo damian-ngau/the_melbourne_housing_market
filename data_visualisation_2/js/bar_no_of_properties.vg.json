@@ -4,6 +4,10 @@
   "data": {"url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/data_visualisation_2/data/clean_melbourne_housing.csv"},
   "mark": "bar",
   "encoding": {
+    "tooltip": [
+      {"field": "RegionName", "type": "nominal"},
+      {"aggregate": "count", "type": "quantitative"}
+      ],
     "y": {
       "field": "RegionName",
       "type": "nominal",
@@ -12,11 +16,6 @@
     "x": {
       "aggregate": "count",
       "type": "quantitative"
-    },
-    "tooltip": [
-      {"field": "RegionName", "type": "nominal"},
-      {"aggregate": "count",
-      "type": "quantitative"}
-      ]
+    }
   }
 }
