@@ -15,7 +15,8 @@
     },
     "tooltip": [
       {"field": "RegionName", "type": "nominal"},
-      {"field": "x", "type": "quantitative"}
+      {"aggregate": "count",
+      "type": "quantitative"}
       ]
   }
 }
