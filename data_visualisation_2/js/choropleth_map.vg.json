@@ -17,7 +17,7 @@
           "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/data_visualisation_2/data/clean_melbourne_housing.csv"
         },
         "key": "Suburb",
-        "fields": "Price"
+        "fields": ["Price"]
       }
     },
     {"calculate": "datum.Price + 0.1", "as": "Price"}
