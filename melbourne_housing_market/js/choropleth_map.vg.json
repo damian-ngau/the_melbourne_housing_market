@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "COVID-19 Active Cases (10 Oct 2020)",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/melbourne_housing_market/js/Aus-Melbourne02.json",
+    "format": {
+          "type": "topojson",
+          "feature": "Aus-Melbourne02"
+        }
+  },
+  "transform": [{
+        "lookup": "properties.locname",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/melbourne_housing_market/data/clean_melbourne_housing.csv"
+        },
+        "key": "CouncilChoro",
+        "fields": ["Price"],
+      "aggregate": [{
+        "op": "mean",
+        "field": "Price",
+        "as": "mean_price"
+        }],
+        "groupby": ["CouncilChoro"]
+      }
+    }
+  ],
+  "projection": {
+    "type": "equirectangular"
+  },
+  "mark": {
+    "type": "geoshape"
+    },
+  "encoding": {
+    "color": {
+      "field": "mean_price",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold"
+        "domain": [3000000, 6000000, 9000000],
+        "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+      }
+    },
+    "tooltip": [
+      {"field": "properties.locname", "type": "nominal", "title": "CouncilChoro"},
+      {"field": "mean_price", "type": "quantitative"}
+    ]
+  }
+}
