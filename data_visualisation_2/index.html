@@ -24,6 +24,9 @@
 <h2>No. of Properties Sold by Region</h2>
 <div id="bar_no_of_properties"></div>
   
+<h2>Choropleth Map</h2>
+<div id="choropleth_map"></div>
+  
 <script type="text/javascript">
   
   var vis1 = "js/symbol_map.vg.json";
@@ -41,6 +44,12 @@
   var vis3 = "js/bar_no_of_properties.vg.json";
   
   vegaEmbed('#bar_no_of_properties', vis3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var vis2 = "js/choropleth_map.vg.json";
+  
+  vegaEmbed('#choropleth_map', vis2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
