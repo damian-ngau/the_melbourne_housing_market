@@ -13,17 +13,11 @@
   "transform": [{
     "lookup": "properties.locname",
      "from": {
-       "data": {
+      "data": {
          "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/melbourne_housing_market/data/clean_melbourne_housing.csv"
         },
         "key": "CouncilChoro",
-        "fields": ["Price"],
-      "aggregate": [{
-        "op": "mean",
-        "field": "Price",
-        "as": "mean_price"
-        }],
-        "groupby": ["CouncilChoro"]
+        "fields": ["Price"]
       }
     }
   ],
@@ -35,7 +29,7 @@
     },
   "encoding": {
     "color": {
-      "field": "mean_price",
+      "field": "Price",
       "type": "quantitative",
       "scale": {
         "type": "threshold",
@@ -45,7 +39,7 @@
     },
     "tooltip": [
       {"field": "properties.locname", "type": "nominal", "title": "CouncilChoro"},
-      {"field": "mean_price", "type": "quantitative"}
+      {"field": "Price", "type": "quantitative"}
     ]
   }
 }
