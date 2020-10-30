@@ -16,7 +16,7 @@
       "data": {
          "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/melbourne_housing_market/data/choropleth_data.csv"
         },
-        "key": "CouncilChoro",
+        "key": "Council",
         "fields": ["AvgPrice"]
       }
     }
@@ -38,8 +38,8 @@
       }
     },
     "tooltip": [
-      {"field": "properties.locname", "type": "nominal", "title": "CouncilChoro"},
-      {"field": "AvgPrice", "type": "quantitative"}
+      {"field": "properties.locname", "type": "nominal", "title": "Council"},
+      {"field": "AvgPrice", "type": "quantitative", "title": "Average Property Price"}
     ]
   }
 }
