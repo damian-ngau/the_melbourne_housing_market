@@ -19,7 +19,8 @@
         "key": "Suburb",
         "fields": ["Price"]
       }
-    }
+    },
+    {"calculate": "datum.Price + 0.1", "as": "Price"}
   ],
   "projection": {
     "type": "equirectangular"
