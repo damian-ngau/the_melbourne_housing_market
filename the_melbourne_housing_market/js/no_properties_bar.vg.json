@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "No. of Properties Sold by Region",
+  "data": {"url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/melbourne_housing.csv"},
+  "mark": "bar",
+  "encoding": {
+    "tooltip": [
+      {"field": "RegionName", "type": "nominal"},
+      {"aggregate": "count", "type": "quantitative"}
+      ],
+    "y": {
+      "field": "RegionName",
+      "type": "nominal",
+      "sort": "-x"
+    },
+    "x": {
+      "aggregate": "count",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "RegionName",
+      "scale": {
+            "domain": [
+              "Eastern Metropolitan",
+              "Eastern Victoria",
+              "Northern Metropolitan",
+              "Northern Victoria",
+              "South-Eastern Metropolitan",
+              "Southern Metropolitan",
+              "Western Metropolitan",
+              "Western Victoria"
+            ],
+            "range": [
+              "#1b9e77",
+              "#d95f02",
+              "#7570b3",
+              "#e7298a",
+              "#66a61e",
+              "#e6ab02",
+              "#a6761d",
+              "#666666"
+            ]}
+    }
+    
+  }
+}
