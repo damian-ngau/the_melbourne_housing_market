@@ -5,11 +5,11 @@
   "mark": "bar",
   "encoding": {
     "tooltip": [
-      {"field": "RegionName", "type": "nominal"},
+      {"field": "Region", "type": "nominal"},
       {"aggregate": "count", "type": "quantitative"}
       ],
     "y": {
-      "field": "RegionName",
+      "field": "Region",
       "type": "nominal",
       "sort": "-x"
     },
@@ -18,7 +18,7 @@
       "type": "quantitative"
     },
     "color": {
-      "field": "RegionName",
+      "field": "Region",
       "scale": {
             "domain": [
               "Eastern Metropolitan",
