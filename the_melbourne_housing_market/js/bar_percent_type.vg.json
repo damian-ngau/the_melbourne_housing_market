@@ -3,6 +3,11 @@
   "data": {"url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/bar_percent_type_data.csv"},
   "mark": "bar",
   "encoding": {
+    "tooltip": [
+    {"field": "Region", "type": "nominal"},
+    {"field": "Type", "type": "nominal"},
+    {"field": "Percentage", "type": "quantitative", "format": ".2f"}
+    ],
     "x": {
       "aggregate": "sum", 
       "field": "Percentage",
