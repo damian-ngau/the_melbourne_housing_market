@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/line_region_total_data.csv"},
+  "width": 400,
+  "height": 300,
+  "encoding": {"x": {"field": "Month", "sort": {"field": "index"}}},
+  "layer": [
+    {
+      "encoding": {
+        "color": {"field": "Region", "type": "nominal"},
+        "y": {"field": "Total", "type": "quantitative"}
+      },
+      "layer": [
+        {"mark": "line"},
+        {"transform": [{"filter": {"selection": "hover"}}], "mark": "point"}
+      ]
+    },
+    {
+      "transform": [{"pivot": "Region", "value": "Total", "groupby": ["Month"]}],
+      "mark": "rule",
+      "encoding": {
+        "opacity": {
+          "condition": {"value": 0.3, "selection": "hover"},
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Eastern Metropolitan", "type": "quantitative"},
+          {"field": "Eastern Victoria", "type": "quantitative"},
+          {"field": "Northern Metropolitan", "type": "quantitative"},
+          {"field": "Northern Victoria", "type": "quantitative"},
+          {"field": "South-Eastern Metropolitan", "type": "quantitative"},
+          {"field": "Southern Metropolitan", "type": "quantitative"},
+          {"field": "Western Metropolitan", "type": "quantitative"},
+          {"field": "Western Victoria", "type": "quantitative"}
+        ]
+      },
+      "selection": {
+        "hover": {
+          "type": "single",
+          "fields": ["Month"],
+          "nearest": true,
+          "on": "mouseover",
+          "empty": "none",
+          "clear": "mouseout"
+        }
+      }
+    }
+  ]
+}
