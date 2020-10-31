@@ -1,0 +1,21 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/bar_percent_type_data.csv"},
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "aggregate": "sum", 
+      "field": "Percentage",
+      "title": "Percentage"
+      },
+    "y": {"field": "Region"},
+    "color": {
+      "field": "Type",
+      "scale": {
+      "domain": ["House", "Townhouse", "Unit"],
+      "range": ["#e7ba52", "#c7c7c7", "#aec7e8"]
+      },
+      "title": "Property Type"
+    }
+  }
+}
