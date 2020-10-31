@@ -38,7 +38,7 @@
       }
     },
     "tooltip": [
-      {"field": "properties.NAME", "type": "nominal", "title": "Council"},
+      {"field": "properties.locname", "type": "nominal", "title": "Council"},
       {"field": "AveragePrice", "type": "quantitative"}
     ]
   }
