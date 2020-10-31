@@ -49,7 +49,7 @@
     }
   ],
   "transform": [
-    {"filter": "datum.Price > Price_Above"},
+    {"filter": "datum.AveragePrice > Price_Above"},
     {"filter": "Region_selection == null || datum.Region == Region_selection"}
   ],
   "encoding": {
@@ -57,12 +57,14 @@
       "field": "AverageRooms",
       "type": "quantitative",
       "title": "Average Number of Rooms",
-      "axis": {"tickCount": 4}
+      "scale": {"domain": [2, 4]},
+      "axis": {"tickCount": 3}
     },
     "y": {
       "field": "AverageBathrooms",
       "type": "quantitative",
       "title": "Average Number of Bathrooms",
+      "scale": {"domain": [1, 2]},
       "axis": {"tickCount": 3}
     }
   },
@@ -78,12 +80,12 @@
       "mark": "circle",
       "encoding": {
         "size": {
-          "field": "Price",
+          "field": "AveragePrice",
           "type": "quantitative",
           "scale": {
             "type": "threshold",
             "domain": [300000, 600000, 900000, 1200000],
-            "range": [5, 10, 15, 20, 25]
+            "range": [100, 200, 300, 400, 500]
           },
           "legend": {"format": ".1s"}
         },
@@ -119,7 +121,7 @@
         },
         "tooltip": [
           {"field": "Region", "type": "nominal"},
-          {"field": "Price", "type": "quantitative", "format": ","},
+          {"field": "AveragePrice", "type": "quantitative", "format": ","},
           {"field": "AverageRooms", "type": "quantitative"},
           {"field": "AverageBathrooms", "type": "quantitative"}
         ]
