@@ -18,6 +18,8 @@
 <div id="scatter_plot"></div>
   
 <div id="bar_percent_type"></div>
+  
+<div id="bar_no_properties"></div>
 
 <script type="text/javascript">
 
@@ -35,6 +37,12 @@
   vegaEmbed('#bar_percent_type', vis3).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
+  
+  var vis4 = "js/bar_no_properties.vg.json";
+  vegaEmbed('#bar_no_properties', vis4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
 </script>
 
 </body>
