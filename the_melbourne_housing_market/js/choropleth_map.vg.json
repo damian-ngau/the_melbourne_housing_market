@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Average Property Prices by Council",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/js/Aus-Melbourne02.json",
+    "format": {
+          "type": "topojson",
+          "feature": "Aus-Melbourne02"
+        }
+  },
+  "transform": [{
+      "lookup": "properties.locname",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/choropleth_data.csv"
+        },
+        "key": "Council",
+        "fields": ["AveragePrice"]
+      }
+    }
+  ],
+  "projection": {
+    "type": "equirectangular"
+  },
+  "mark": {
+    "type": "geoshape"
+    },
+  "encoding": {
+    "color": {
+      "field": "AveragePrice",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold",
+        "domain": [500000, 1000000, 1500000, 2000000],
+        "range": ["#edf8fb", "#b2e2e2", "#66c2a4", "#2ca25f", "#006d2c"]
+      }
+    },
+    "tooltip": [
+      {"field": "properties.NAME", "type": "nominal", "title": "Council"},
+      {"field": "AveragePrice", "type": "quantitative"}
+    ]
+  }
+
+}
