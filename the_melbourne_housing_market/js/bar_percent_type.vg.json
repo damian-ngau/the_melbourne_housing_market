@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Type of Properties Sold by Region ",
   "data": {"url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/bar_percent_type_data.csv"},
   "selection": {
     "highlight": {"type": "single", "empty": "none", "on": "mouseover"},
