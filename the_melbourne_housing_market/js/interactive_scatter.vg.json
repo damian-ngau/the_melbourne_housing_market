@@ -114,6 +114,7 @@
   "layer": [
     {
       "selection": {
+        "grid": {"type": "interval", "bind": "scales"},
         "region_highlight": {
           "type": "multi",
           "fields": ["Region"],
@@ -176,7 +177,7 @@
         "type": "text",
         "align": "right",
         "baseline": "middle",
-        "dx": -12,
+        "dx": -10,
         "fontSize": 11.5,
         "fontStyle": "italic"
       },
