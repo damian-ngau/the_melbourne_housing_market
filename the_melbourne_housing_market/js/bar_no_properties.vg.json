@@ -2,7 +2,15 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "No. of Properties Sold by Region",
   "data": {"url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/melbourne_housing.csv"},
-  "mark": "bar",
+  "selection": {
+  "highlight": {"type": "single", "empty": "none", "on": "mouseover"},
+  "select": {"type": "multi"}
+  },
+  "mark": {
+    "type": "bar",
+    "stroke": "black",
+    "cursor": "pointer"
+  },
   "encoding": {
     "tooltip": [
       {"field": "Region", "type": "nominal"},
@@ -17,6 +25,10 @@
       "aggregate": "count",
       "type": "quantitative"
     },
+    "fillOpacity": {
+      "condition": {"selection": "select", "value": 1},
+      "value": 0.3
+      },
     "color": {
       "field": "Region",
       "scale": {
@@ -41,8 +53,24 @@
               "#666666"
             ]
       },
-      "legend": null
+    "legend": null
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "test": {
+            "and": [
+              {"selection": "select"},
+              "length(data(\"select_store\"))"
+            ]
+          },
+          "value": 2
+        },
+        {"selection": "highlight", "value": 1}
+      ],
+      "value": 0
     }
-    
-  }
+  },
+  "config": {
+  "scale": {"bandPaddingInner": 0.2}}
 }
