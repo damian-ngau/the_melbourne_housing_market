@@ -148,12 +148,12 @@
               "Western Victoria"
             ],
             "range": [ 
-              "#a6cee3",
-              "#1f78b4",
-              "#b2df8a",
-              "#33a02c",
               "#fb9a99",
               "#e31a1c",
+              "#b2df8a",
+              "#33a02c",
+              "#a6cee3",
+              "#1f78b4",
               "#fdbf6f",
               "#ff7f00"
             ]
