@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 500,
-  "height": 200,
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/js/Aus-Melbourne02.json",
     "format": {
