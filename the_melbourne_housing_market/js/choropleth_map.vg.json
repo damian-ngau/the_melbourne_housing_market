@@ -1,8 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Average Property Prices by Council",
-  "width": 800,
-  "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/js/Aus-Melbourne02.json",
     "format": {
