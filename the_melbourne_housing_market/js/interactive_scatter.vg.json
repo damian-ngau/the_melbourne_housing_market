@@ -131,7 +131,8 @@
             "domain": [1000000, 2000000, 3000000],
             "range": [50, 150, 300, 500]
           },
-          "legend": {"format": ".1s"}
+          "legend": {"format": ".1s"},
+          "title": "Average Price"
         },
         "color": {
           "field": "Region",
@@ -167,9 +168,9 @@
           {"field": "Region", "type": "nominal"},
           {"field": "Council", "type": "nominal"},
           {"field": "Suburb", "type": "nominal"},
-          {"field": "AvgPrice", "type": "quantitative", "format": "$,", "title": "Price"},
-          {"field": "AvgLandSize", "type": "quantitative", "format": ",", "title": "Land Area"},
-          {"field": "AvgBuildingArea", "type": "quantitative", "format": ",", "title": "Building Area"}
+          {"field": "AvgPrice", "type": "quantitative", "format": "$,", "title": "Average Price"},
+          {"field": "AvgLandSize", "type": "quantitative", "format": ",", "title": "Average Land Area"},
+          {"field": "AvgBuildingArea", "type": "quantitative", "format": ",", "title": "Average Building Area"}
         ]
       }
     },
@@ -196,9 +197,9 @@
           {"field": "Region", "type": "nominal"},
           {"field": "Council", "type": "nominal"},
           {"field": "Suburb", "type": "nominal"},
-          {"field": "AvgPrice", "type": "quantitative", "format": "$,", "title": "Price"},
-          {"field": "AvgLandSize", "type": "quantitative", "format": ",", "title": "Land Area"},
-          {"field": "AvgBuildingArea", "type": "quantitative", "format": ",", "title": "Building Area"}
+          {"field": "AvgPrice", "type": "quantitative", "format": "$,", "title": "Average Price"},
+          {"field": "AvgLandSize", "type": "quantitative", "format": ",", "title": "Average Land Area"},
+          {"field": "AvgBuildingArea", "type": "quantitative", "format": ",", "title": "Average Building Area"}
         ]
       }
     }
