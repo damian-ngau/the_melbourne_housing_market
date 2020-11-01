@@ -31,9 +31,10 @@
       "domain": ["House", "Townhouse", "Unit"],
       "range": ["#4C78A8", "#c7c7c7", "#aec7e8"]
       },
-      "title": "Property Type",
+      "title": null,
       "legend": {
-        "symbolStrokeWidth": 0}
+        "symbolStrokeWidth": 0,
+        "orient": "bottom"}
     },
     "fillOpacity": {
       "condition": {"selection": "select", "value": 1},
