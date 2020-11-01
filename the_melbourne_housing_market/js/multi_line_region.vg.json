@@ -3,12 +3,35 @@
   "data": {"url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/multi_line_region_data.csv"},
   "width": 400,
   "height": 300,
-  "encoding": {"x": {"field": "Month", "sort": {"field": "index"}}},
+  "encoding": {"x": {"field": "Month", "sort": {"field": "index"}, "axis": {"labelAngle": 0} }},
   "layer": [
     {
       "encoding": {
-        "color": {"field": "Region", "type": "nominal"},
-        "y": {"field": "Total", "type": "quantitative"}
+        "color": {"field": "Region", "type": "nominal", 
+                  "scale": {
+                    "domain": [
+                      "Eastern Metropolitan",
+                      "Eastern Victoria",
+                      "Northern Metropolitan",
+                      "Northern Victoria",
+                      "South-Eastern Metropolitan",
+                      "Southern Metropolitan",
+                      "Western Metropolitan",
+                      "Western Victoria"
+                      ],
+                    "range": [ 
+                      "#fb9a99",
+                      "#e31a1c",
+                      "#b2df8a",
+                      "#33a02c",
+                      "#a6cee3",
+                      "#1f78b4",
+                      "#fdbf6f",
+                      "#ff7f00"
+                      ]
+                      }
+        },
+        "y": {"field": "Total", "type": "quantitative", "title": "No. of Properties Sold"}
       },
       "layer": [
         {"mark": "line"},
@@ -22,8 +45,9 @@
         "opacity": {
           "condition": {"value": 0.3, "selection": "hover"},
           "value": 0
-        },
+        },      
         "tooltip": [
+          {"field": "Month"},
           {"field": "Eastern Metropolitan", "type": "quantitative"},
           {"field": "Eastern Victoria", "type": "quantitative"},
           {"field": "Northern Metropolitan", "type": "quantitative"},
