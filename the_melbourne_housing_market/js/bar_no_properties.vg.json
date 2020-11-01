@@ -14,7 +14,7 @@
   "encoding": {
     "tooltip": [
       {"field": "Region", "type": "nominal"},
-      {"aggregate": "count", "type": "quantitative"}
+      {"aggregate": "count", "type": "quantitative", "title": "No. of Properties Sold", "format": ","}
       ],
     "y": {
       "field": "Region",
@@ -23,7 +23,8 @@
     },
     "x": {
       "aggregate": "count",
-      "type": "quantitative"
+      "type": "quantitative",
+      "title": "No. of Properties Sold"
     },
     "fillOpacity": {
       "condition": {"selection": "select", "value": 1},
