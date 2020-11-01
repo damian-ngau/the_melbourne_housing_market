@@ -1,10 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 400,
-  "height": 300,
-  "title": "Relationship between Rooms and Bathrooms",
+  "width": 800,
+  "height": 600,
   "data": {
-    "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/interactive_scatter_data.csv"
+    "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/region_council_suburb_avg_data.csv"
   },
   "params": [
     {
@@ -13,59 +12,103 @@
       "bind": {
         "input": "range",
         "min": 0,
-        "max": 1400000,
-        "step": 200000,
-        "name": "Minimum Price: "
+        "max": 3000000,
+        "step": 500000,
+        "name": "Minimum Average Price: "
       }
     },
     {
-      "name": "Region_selection",
+      "name": "Council_selection",
       "bind": {
         "input": "select",
         "options": [
           null,
-          "Eastern Metropolitan",
-          "Eastern Victoria",
-          "Northern Metropolitan",
-          "Northern Victoria",
-          "South-Eastern Metropolitan",
-          "Southern Metropolitan",
-          "Western Metropolitan",
-          "Western Victoria"
+          "City of Banyule",
+          "City of Bayside",
+          "City of Boroondara",
+          "City of Brimbank",
+          "City of Casey",
+          "City of Darebin",
+          "City of Frankston",
+          "City of Glen Eira",
+          "City of Greater Dandenong",
+          "City of Hobsons Bay",
+          "City of Hume",
+          "City of Kingston",
+          "City of Knox",
+          "City of Manningham",
+          "City of Maribyrnong",
+          "City of Maroondah",
+          "City of Melbourne",
+          "City of Melton",
+          "City of Monash",
+          "City of Moonee Valley",
+          "City of Moreland",
+          "City of Port Phillip",
+          "City of Stonnington",
+          "City of Whitehorse",
+          "City of Whittlesea",
+          "City of Wyndham",
+          "City of Yarra",
+          "Shire of Nillumbik",
+          "Shire of Yarra Ranges",
+          "Shire of Cardinia"
         ],
         "labels":[
           "Show All",
-          "Eastern Metropolitan",
-          "Eastern Victoria",
-          "Northern Metropolitan",
-          "Northern Victoria",
-          "South-Eastern Metropolitan",
-          "Southern Metropolitan",
-          "Western Metropolitan",
-          "Western Victoria"
+          "City of Banyule",
+          "City of Bayside",
+          "City of Boroondara",
+          "City of Brimbank",
+          "City of Casey",
+          "City of Darebin",
+          "City of Frankston",
+          "City of Glen Eira",
+          "City of Greater Dandenong",
+          "City of Hobsons Bay",
+          "City of Hume",
+          "City of Kingston",
+          "City of Knox",
+          "City of Manningham",
+          "City of Maribyrnong",
+          "City of Maroondah",
+          "City of Melbourne",
+          "City of Melton",
+          "City of Monash",
+          "City of Moonee Valley",
+          "City of Moreland",
+          "City of Port Phillip",
+          "City of Stonnington",
+          "City of Whitehorse",
+          "City of Whittlesea",
+          "City of Wyndham",
+          "City of Yarra",
+          "Shire of Nillumbik",
+          "Shire of Yarra Ranges",
+          "Shire of Cardinia"
         ],
-        "name": "Region Selection: "
+        "name": "Council Selection: "
       }
     }
   ],
   "transform": [
-    {"filter": "datum.AveragePrice > Price_Above"},
-    {"filter": "Region_selection == null || datum.Region == Region_selection"}
+    {"filter": "datum.AvgPrice > Price_Above"},
+    {"filter": "Council_selection == null || datum.Council == Council_selection"}
   ],
   "encoding": {
     "x": {
-      "field": "AverageRooms",
+      "field": "AvgLandSize",
       "type": "quantitative",
-      "title": "Average Number of Rooms",
-      "scale": {"domain": [2, 4]},
-      "axis": {"tickCount": 3}
+      "title": "Average Land Area (Square Metres)",
+      "axis": {"tickCount": 6},
+      "scale": {"domain": [100, 6000]}
     },
     "y": {
-      "field": "AverageBathrooms",
+      "field": "AvgBuildingArea",
       "type": "quantitative",
-      "title": "Average Number of Bathrooms",
-      "scale": {"domain": [1, 2]},
-      "axis": {"tickCount": 3}
+      "title": "Average Building Area (Square Metres)",
+      "axis": {"tickCount": 8},
+      "scale": {"domain": [50, 400]}
     }
   },
   "layer": [
@@ -80,12 +123,12 @@
       "mark": "circle",
       "encoding": {
         "size": {
-          "field": "AveragePrice",
+          "field": "AvgPrice",
           "type": "quantitative",
           "scale": {
             "type": "threshold",
-            "domain": [300000, 600000, 900000, 1200000],
-            "range": [100, 300, 500, 1000, 2000]
+            "domain": [1000000, 2000000, 3000000],
+            "range": [50, 100, 150, 500]
           },
           "legend": {"format": ".1s"}
         },
@@ -103,7 +146,7 @@
               "Western Metropolitan",
               "Western Victoria"
             ],
-            "range": [
+            "range": [ 
               "#1b9e77",
               "#d95f02",
               "#7570b3",
@@ -121,9 +164,38 @@
         },
         "tooltip": [
           {"field": "Region", "type": "nominal"},
-          {"field": "AveragePrice", "type": "quantitative", "format": ","},
-          {"field": "AverageRooms", "type": "quantitative"},
-          {"field": "AverageBathrooms", "type": "quantitative"}
+          {"field": "Council", "type": "nominal"},
+          {"field": "Suburb", "type": "nominal"},
+          {"field": "AvgLandSize", "type": "quantitative", "format": ",", "title": "Land Area"},
+          {"field": "AvgBuildingArea", "type": "quantitative", "format": ",", "title": "Building Area"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Suburb", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Suburb'] == 'Clayton' || datum['Suburb'] == 'Melbourne' || datum['Suburb'] == 'Mickleham'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Region", "type": "nominal"},
+          {"field": "Council", "type": "nominal"},
+          {"field": "Suburb", "type": "nominal"},
+          {"field": "AvgLandSize", "type": "quantitative", "format": ",", "title": "Land Area"},
+          {"field": "AvgBuildingArea", "type": "quantitative", "format": ",", "title": "Building Area"}
         ]
       }
     }
