@@ -13,7 +13,7 @@
   "encoding": {
     "tooltip": [
     {"field": "Region", "type": "nominal"},
-    {"field": "Type", "type": "nominal"},
+    {"field": "Type", "type": "nominal", "title": "Property Type"},
     {"field": "Percentage", "type": "quantitative", "format": ".2f"}
     ],
     "x": {
