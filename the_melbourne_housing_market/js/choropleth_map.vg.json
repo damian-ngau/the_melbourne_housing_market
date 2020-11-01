@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Average Property Prices by Council",
   "width": 500,
   "height": 200,
   "data": {
@@ -10,6 +9,10 @@
           "feature": "Aus-Melbourne02"
         }
   },
+  "selection": {
+    "highlight": {"type": "single", "empty": "none", "on": "mouseover"},
+    "select": {"type": "multi"}
+    },
   "transform": [{
       "lookup": "properties.locname",
       "from": {
@@ -25,7 +28,9 @@
     "type": "equirectangular"
   },
   "mark": {
-    "type": "geoshape"
+    "type": "geoshape",
+    "stroke": "#2b2d42",
+    "cursor": "pointer"
     },
   "encoding": {
     "color": {
@@ -34,13 +39,32 @@
       "scale": {
         "type": "threshold",
         "domain": [500000, 1000000, 1500000, 2000000],
-        "range": ["#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"]
-      }
+        "range": ["#eff3ff", "#bdd7e7", "#6baed6", "#3182bd", "#08519c"]
+      }, 
+      "legend": {"title": "Average Price (AUD)", "format": "$,"}
+    },
+    "fillOpacity": {
+      "condition": {"selection": "select", "value": 1},
+      "value": 0.3
+      },
+    "strokeWidth": {
+      "condition": [
+        {
+          "test": {
+            "and": [
+              {"selection": "select"},
+              "length(data(\"select_store\"))"
+            ]
+          },
+          "value": 2
+        },
+        {"selection": "highlight", "value": 1}
+      ],
+      "value": 1
     },
     "tooltip": [
       {"field": "properties.locname", "type": "nominal", "title": "Council"},
-      {"field": "AveragePrice", "type": "quantitative"}
+      {"field": "AveragePrice", "type": "quantitative", "format": "$,"}
     ]
   }
-
 }
