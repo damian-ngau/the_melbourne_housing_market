@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 450,
+  "width": 400,
   "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/region_council_suburb_avg_data.csv"
