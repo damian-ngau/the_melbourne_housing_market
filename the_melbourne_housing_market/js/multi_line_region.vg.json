@@ -20,14 +20,14 @@
                       "Western Victoria"
                       ],
                     "range": [ 
-                      "#fb9a99",
-                      "#e31a1c",
-                      "#b2df8a",
-                      "#33a02c",
-                      "#a6cee3",
-                      "#1f78b4",
-                      "#fdbf6f",
-                      "#ff7f00"
+                      "#003f5c",
+                      "#2f4b7c",
+                      "#665191",
+                      "#a05195",
+                      "#d45087",
+                      "#f95d6a",
+                      "#ff7c43",
+                      "#ffa600"
                       ]
                       }
         },
@@ -35,7 +35,7 @@
       },
       "layer": [
         {"mark": "line"},
-        {"transform": [{"filter": {"selection": "hover"}}], "mark": "point"}
+        {"transform": [{"filter": {"selection": "hover"}}], "mark": "circle"}
       ]
     },
     {
