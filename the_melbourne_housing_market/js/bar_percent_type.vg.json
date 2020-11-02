@@ -29,7 +29,7 @@
       "field": "Type",
       "scale": {
       "domain": ["House", "Townhouse", "Unit"],
-      "range": ["#1d3557", "#457b9d", "#a8dadc"]
+      "range": ["#3182bd", "#9ecae1", "#deebf7"]
       },
       "title": null,
       "legend": {
