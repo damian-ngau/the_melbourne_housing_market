@@ -188,7 +188,7 @@
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['Suburb'] == 'Clayton' || datum['Suburb'] == 'Melbourne' || datum['Suburb'] == 'Mickleham' || datum['Suburb'] == 'Chadstone' || datum['Suburb'] == 'Kooyong' || datum['Suburb'] == 'Springvale'",
+            "test": "datum['Suburb'] == 'Clayton' || datum['Suburb'] == 'Melbourne' || datum['Suburb'] == 'Mickleham' || datum['Suburb'] == 'Chadstone' || datum['Suburb'] == 'Kooyong' || datum['Suburb'] == 'Glen Waverley'",
             "value": 1
           },
           "value": 0
