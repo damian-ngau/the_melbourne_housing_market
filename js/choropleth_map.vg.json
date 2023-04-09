@@ -3,7 +3,7 @@
   "width": 490,
   "height": 300,
   "data": {
-    "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/js/Aus-Melbourne02.json",
+    "url": "https://raw.githubusercontent.com/damian-ngau/the_melbourne_housing_market/main/js/Aus-Melbourne02.json",
     "format": {
           "type": "topojson",
           "feature": "Aus-Melbourne02"
