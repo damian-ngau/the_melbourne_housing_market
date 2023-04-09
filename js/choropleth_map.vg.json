@@ -17,7 +17,7 @@
       "lookup": "properties.locname",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/choropleth_data.csv"
+          "url": "https://raw.githubusercontent.com/damian-ngau/the_melbourne_housing_market/main/data/choropleth_data.csv"
         },
         "key": "Council",
         "fields": ["AveragePrice"]
