@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 490,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/js/Aus-Melbourne02.json",
+    "format": {
+          "type": "topojson",
+          "feature": "Aus-Melbourne02"
+        }
+  },
+  "selection": {
+    "highlight": {"type": "single", "empty": "none", "on": "mouseover"},
+    "select": {"type": "multi"}
+    },
+  "transform": [{
+      "lookup": "properties.locname",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/DmnNg/FIT3179/main/the_melbourne_housing_market/data/choropleth_data.csv"
+        },
+        "key": "Council",
+        "fields": ["AveragePrice"]
+      }
+    }
+  ],
+  "projection": {
+    "type": "equirectangular"
+  },
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#2b2d42",
+    "cursor": "pointer"
+    },
+  "encoding": {
+    "color": {
+      "field": "AveragePrice",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold",
+        "domain": [500000, 1000000, 1500000, 2000000],
+        "range": ["#eff3ff", "#bdd7e7", "#6baed6", "#3182bd", "#08519c"]
+      }, 
+      "legend": {"title": "Average Price (AUD)", "format": "$,", "orient": "bottom-left", "direction": "horizontal"}
+    },
+    "fillOpacity": {
+      "condition": {"selection": "select", "value": 1},
+      "value": 0.3
+      },
+    "strokeWidth": {
+      "condition": [
+        {
+          "test": {
+            "and": [
+              {"selection": "select"},
+              "length(data(\"select_store\"))"
+            ]
+          },
+          "value": 2
+        },
+        {"selection": "highlight", "value": 1}
+      ],
+      "value": 1
+    },
+    "tooltip": [
+      {"field": "properties.locname", "type": "nominal", "title": "Council"},
+      {"field": "AveragePrice", "type": "quantitative", "title": "Average Price", "format": "$,"}
+    ]
+  }
+}
