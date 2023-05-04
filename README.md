@@ -3,8 +3,11 @@
 An analysis on factors that influenced property prices in Melbourne, Australia between the years 2016-2018.
 
 - Cleaned and Aggregated values using SQL and Excel.
+
 - Created visualisations using Vega-Lite.
+
 - Developed website using HTML and CSS.
+
 - Deployed to Github Pages.
 
 Link to website: https://damian-ngau.github.io/the_melbourne_housing_market/
