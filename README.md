@@ -7,7 +7,7 @@ An analysis on factors that influenced property prices in Melbourne, Australia b
 - Developed website using HTML and CSS.
 - Deployed to Github Pages.
 
-Link to website (https://damian-ngau.github.io/the_melbourne_housing_market/)
+Link to website https://damian-ngau.github.io/the_melbourne_housing_market/
 
 Dataset of histological images can be found on [kaggle](https://www.kaggle.com/datasets/anthonypino/melbourne-housing-market)
 
